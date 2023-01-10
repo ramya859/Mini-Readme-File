@@ -21,26 +21,31 @@ Modules included in our Project:
 
 Firstly, we loaded the raw text and extractive summarization is applied on the text.
 
-**Extractive summarization**
+**Extractive summarization**: 
+
 It simply means picking out the important sentences as it is from the paragraph and form a summary. For extractive summarization we have used T5 Transformer model. 
 Then after extractive summarization you can perhaps paraphrase the sentences that we got in summarization. It will generate output as summarized and precised text.
 For summarization we have taken Base-T5 model from Huggingface Transformer. One thing is that we dont need to train anything because the Base model that is provided 
 by Google on hugging face already has summarization.  
 
-**Keyword Extraction**
+**Keyword Extraction**: 
+
 Keyword extraction means extracting the keywords from the summarised text i.e; taking summarized text as input which we got in the previous stage to key BERT algorthm and it will extract the keywords. Key Bert algorithm is very efficient and gives better performance compared to other algorithms. Key BERT extract grammatically correct keyphrases that are most similar to a document.  
 
-**Question Generation**
+**Question Generation**:
+
 Once you extract those keywords so with summarised text and those extracted keywords as input given to T5 Transformer Model and it automatically generates questions.
 The T5 (Text-To-Text Transfer Transformer) Model uses text-to-text approach where the input and output are always text strings. Every task including translation, question answering, and classification is cast as feeding the model text as input and training it to generate some target text.
 
-**Generating Distractors**
+**Generating Distractors**:
+
 Distractors are the wrong choices to Multiple Choice questions. So, for generating distractors we used Wordnet and Sense2Vec approaches. Correct answer will be the keyword itself. Distractors will be generated related to the keyword considered. Wordnet is a lexical database of semantic relations between words in more than 200 languages. Sense2Vec is an incredible tool to get synonyms and correlations, given a keyword. 
 
 For example, if a given multiple choice question has Barack Obama as the correct answer then we need to generate wrong choices (distractors) like George Bush, Bill Clinton, Donald Trump, etc.  in order to effectively filter near-duplicates, convert the original answer word as well as each of the words from similar word results 
 in sense2vec to a vector using Sentence Transformers.
 
-**Gradio UI Visualization**
+**Gradio UI Visualization**: 
+
 We have implemented our model in Gradio UI. It is an open-source Python library that is used to build machine learning and data science demos and web applications. 
 It allows you to develop an easy-to-use customizable component demo for your machine learning model that anyone can use anywhere. 
 
